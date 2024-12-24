@@ -8,8 +8,6 @@ spring:
           enabled: true
       routes:
         - id: auth-service
-#          uri: lb:http://AUTH-SERVICE
-#          uri: lb://AUTH-SERVICE
           uri: lb://auth-service
           predicates:
             - Path=/api/v1/auth/**
@@ -20,7 +18,6 @@ logging:
       org.springframework.cloud.gateway: DEBUG
       org.springframework.cloud.loadbalancer: DEBUG
       com.tango.gateway_service.config.JwtAuthFilter: DEBUG
-
 
 
 server:
@@ -36,6 +33,6 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://localhost:8761/eureka/
-#      defaultZone: http://localhost:8888/eureka/
+
 
 
