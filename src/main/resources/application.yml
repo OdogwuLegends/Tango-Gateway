@@ -13,6 +13,12 @@ spring:
             - Path=/api/v1/auth/**
           filters:
             - JwtAuthFilter
+        - id: notification-service
+          uri: lb://notification-service
+          predicates:
+            - Path=/api/v1/notification/**
+          filters:
+            - JwtAuthFilter
 logging:
     level:
       org.springframework.cloud.gateway: DEBUG
